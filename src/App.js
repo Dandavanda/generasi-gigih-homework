@@ -1,40 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 import data from './data';
+import Card from './Component/Card';
+import Form from './Component/Form';
+
 
 function App() {
   return (
     <div className="App">
-     <h1>Create Playlist</h1>
-      <form>
-        <div id="title">
-          <label htmlFor="desc">Title</label> <br/>
-          <input type="text" name="title"/>
-        </div>
-        <div id="desc">
-          <label htmlFor="desc">Description</label> <br/>
-          <input type="text" name="desc"/>
-        </div>
-
-        <button id="submit">Submit</button>
-      </form>
-      <div className ="container">
-        <table>
-          <tr>
-            <td><img src={data.album.images[0].url} alt="Album1" className="img-poster"/></td>
-            <td className="box-desc">
-              <p>Track Title : {data.album.name}</p> 
-              <p id="artis"> Artis : {data.album.artists[0].name}</p> 
-              <button class="btn-select"> Select</button>
-            </td>
-          </tr>
-        </table>
-        
-        
-      </div>
-
-      {console.log(data.album)}
-
+      <h1>Create Playlist</h1>
+      <Form />
+      <Card image={data.album.images[0].url} title={data.album.name} artis={data.album.artists[0].name}/>
     </div>
   );
 }
