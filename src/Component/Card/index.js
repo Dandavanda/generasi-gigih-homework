@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Card = (props) => {
+const Cards = (props) => {
     return(
-        <div className ="container">
+        <div className ="cards">
         <table>
           <tr>
             <td><img src={props.image} alt="Album1" className="img-poster"/></td>
@@ -17,4 +17,4 @@ const Card = (props) => {
     )
 }
 
-export default Card
+export default Cards
