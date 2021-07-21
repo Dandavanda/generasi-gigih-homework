@@ -1,16 +1,23 @@
 import './App.css';
 import data from './Data/albums';
 import Cards from './Component/Card';
+import Search from './Component/Search';
+import Auth from './Page/auth';
 import Container from 'react-bootstrap/esm/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import List from './Component/List';
 
 
+
+
 function App() {
   return (
     <div className="App">
+      <Auth />
       <Container>
+      
+      <Search />
       <Row>
         <Col xs={12} md={8}>
         <h2>Playlist</h2>
