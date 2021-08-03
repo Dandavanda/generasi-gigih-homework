@@ -1,5 +1,8 @@
 import './App.css';
 import data from './Data/albums';
+module5-1
+import Cards from './Component/Card';
+import List from './Component/List';
 import Cards from './Component/Card'; import List from './Component/List'; import Search from './Component/Search';
 import Auth from './Page/auth';
 import Container from 'react-bootstrap/esm/Container';
@@ -27,6 +30,28 @@ function App() {
 
   return (
     <div className="App">
+
+      <div className="content">
+      <button>Login</button> <hr/>
+        <h2>Playlist</h2>
+            {data.map((d)=>{
+            return(
+              <Cards image={d.album.images[0].url} title={d.album.name} artis={d.album.artists[0].name}/>    
+            )
+          })}
+      </div>
+      <div className="sidebar">
+        <h3>Popular</h3>
+            {data
+            .filter(d => d.popularity >= 70)
+            .map((d)=>{
+            return(
+              <List  imgList={d.album.images[2].url} nameList = {d.album.name}/>
+            )
+          })}
+      </div>
+
+
       
       <Container>
       
